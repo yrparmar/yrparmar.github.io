@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yrparmar.github.io/sitemap.xml
