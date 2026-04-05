@@ -68,20 +68,19 @@ select {
 
 /* Global Variables */
 :root {
-  --primary-color: #6200EE;
-  --secondary-color: #03DAC6;
-  --accent-color: #BB86FC;
-  --bg-color: #0A0A1F;
-  --text-main: #FFFFFF;
-  --text-muted: rgba(255, 255, 255, 0.7);
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-blur: blur(20px);
-  --font-hero: 'Outfit', sans-serif;
-  --font-main: 'Inter', sans-serif;
-  --header-height: 80px;
+  --primary-color: #007AFF; /* Modern Apple Blue */
+  --secondary-color: #5AC8FA;
+  --accent-color: #ffffff;
+  --bg-color: #030303;
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: 25px;
+  --font-primary: 'Outfit', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+  --header-height: 100px;
   --container-max-width: 1200px;
-  --shadow-premium: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 body {

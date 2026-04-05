@@ -1,104 +1,134 @@
 .app-card {
     position: relative;
-    border-radius: var(--radius-lg);
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
+    height: 100%;
+}
+
+.app-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
     height: 100%;
 }
 
 .app-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.4), 
+        0 0 20px rgba(100, 255, 218, 0.05);
 }
 
 .app-card-inner {
-    padding: var(--spacing-lg);
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     height: 100%;
 }
 
 .app-icon-container {
-    width: 80px;
-    height: 80px;
-    margin-bottom: var(--spacing-md);
-    border-radius: 18px; /* App Store style curvature */
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
-.app-card:hover .app-icon-container {
-    transform: rotate(5deg) scale(1.1);
-}
-
+/* Perfect Squircle Approximation */
 .app-icon {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 22.5%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.app-icon-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(100, 255, 218, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.app-card:hover .app-icon-container::after {
+    opacity: 1;
+}
+
+.app-card:hover .app-icon {
+    transform: scale(1.05) rotate(2deg);
 }
 
 .app-info {
     flex-grow: 1;
+    width: 100%;
 }
 
 .app-title {
     font-family: var(--font-primary);
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: var(--spacing-xs);
-    color: var(--text-primary);
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+    letter-spacing: -0.02em;
 }
 
 .app-description {
     font-family: var(--font-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
-    color: var(--text-secondary);
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    line-clamp: 3;
-    overflow: hidden;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1.5rem;
 }
 
 .app-card-footer {
-    margin-top: var(--spacing-lg);
+    width: 100%;
+    margin-top: auto;
 }
 
 .btn-view-store {
     display: inline-flex;
     align-items: center;
-    gap: var(--spacing-xs);
-    background: var(--accent-primary);
-    color: white;
-    padding: 0.75rem 1.25rem;
-    border-radius: var(--radius-md);
-    font-weight: 600;
+    gap: 0.8rem;
+    background: #ffffff;
+    color: #000000;
+    padding: 0.9rem 1.6rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     width: 100%;
     justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.btn-view-store:hover {
-    background: var(--accent-secondary);
+.play-store-icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.app-card:hover .btn-view-store {
+    background: #000000;
+    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 122, 255, 0.4);
-}
-
-.btn-view-store svg {
-    transition: transform 0.3s ease;
-}
-
-.btn-view-store:hover svg {
-    transform: translate(2px, -2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
