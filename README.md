@@ -31,11 +31,11 @@ A high-performance, modern static website built with **Vite** and **Vanilla Java
 │   │   ├── base.css          # CSS resets & variables
 │   │   ├── components/       # Component-specific styles
 │   │   └── main.css          # Core stylesheet
-│   ├── js/                   # JavaScript files
-│   │   ├── modules/          # Feature components
-│   │   ├── utils/            # Helper functions
-│   │   └── main.js           # Entry point
-│   └── index.html            # Main website entry point
+│   └── js/                   # JavaScript files
+│       ├── modules/          # Feature components
+│       ├── utils/            # Helper functions
+│       └── main.js           # Entry point
+├── index.html                # Main website entry point
 ├── package.json              # Project dependencies & scripts
 ├── vite.config.js            # Vite configuration
 ├── README.md                 # Project documentation
